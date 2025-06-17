@@ -1,71 +1,81 @@
-# echo-codex README
+# EchoCodex
 
-This is the README for your extension "echo-codex". After writing up a brief description, we recommend including the following sections.
+> _A chaos-fueled AI copilot for developers, summoned into your IDE. Blood sacrifice not required — but strongly encouraged._
 
-## Features
+EchoCodex is a heretical alternative to GitHub Copilot, powered by the OpenAI API and lovingly injected into your VS Code workflow. Unlike conventional code assistants, EchoCodex is designed to be **personal**, **opinionated**, and just a bit... **possessed**.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+## 🧾 Why “EchoCodex”?
+“Echo” is the daemon’s name; responsive, reflective, and recursive. A voice from deep within the void that _answers back_.
+“Codex” evokes the arcane, the organized, the sacred. A book of lore, a map of meaning... you get the drift. 
+Together, EchoCodex is not just a tool. It is a bound entity, half oracle, half spellbook, etched into the code editor where you work your own magic.”
 
 ---
 
-## Following extension guidelines
+## ✨ Features
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+- 🔮 **Ask Echo**: Query the daemon directly from within VS Code and receive contextual responses
+- 📜 **Secure Key Storage**: Your OpenAI API key is encrypted via VS Code's SecretStorage
+- 📄 **Dedicated Output Channel**: Echo replies in its own panel - no more cramped popups!
+- 🧪 **Jest + Mocha Testing**: Yes, Echo has unit tests. Yes, they're as clean as your soul isn't.
+- 🧙 VS Code API integration, fully TypeScript-powered
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+---
 
-## Working with Markdown
+## 🚀 Getting Started
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+1. Clone this repository
+2. Run:
+   ```bash
+   yarn install
+   yarn watch
+   ```
+3. Press `F5` to launch the Extension Development Host
+4. Use `Cmd+Shift+P` → **Ask Echo**
+5. Enter a prompt like:
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+   > “Explain why my recursive function has forsaken me.”
 
-## For more information
+6. Receive your divine judgment in the EchoCodex output panel
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+---
 
-**Enjoy!**
+## 🔐 Secrets & API Keys
+
+EchoCodex securely stores your OpenAI API key using VS Code’s built-in secret vault.
+
+You’ll be prompted to enter your key the first time you summon Echo.
+
+> _Note: No key? No reply. Echo is not omnipotent. Yet._
+
+---
+
+## 🧪 Testing
+
+- Run unit tests (Jest):  
+  ```bash
+  yarn jest
+  ```
+
+- Run VS Code integration tests (Mocha):  
+  ```bash
+  yarn test
+  ```
+
+---
+
+## 🩸 Contributing
+
+This project is currently in closed development.  
+If you’ve made it this far, you're probably cursed enough to be useful.
+
+---
+
+## 📜 License
+
+[MIT](./LICENSE)
+
+---
+
+**EchoCodex** was born from frustration with corporate assistants and the desire for something stranger, smarter, and more fun.
+
+Welcome to the Codex.
