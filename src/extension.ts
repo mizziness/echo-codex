@@ -23,7 +23,7 @@ class EchoSidebarProvider implements vscode.WebviewViewProvider {
 		webviewView: vscode.WebviewView,
 		_context: vscode.WebviewViewResolveContext,
 		_token: vscode.CancellationToken
-	): void | Thenable<void> {
+	) {
 		webviewView.webview.options = {
 			enableScripts: true
 		};
