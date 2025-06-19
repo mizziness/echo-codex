@@ -11,6 +11,12 @@ Together, EchoCodex is not just a tool. It is a bound entity, half oracle, half 
 
 ---
 
+## 📦 Project History
+
+See the [Changelog](./CHANGELOG.md) for version details and upcoming features.
+
+---
+
 ## ✨ Features
 
 - 🔮 **Ask Echo**: Query the daemon directly from within VS Code and receive contextual responses

@@ -23,7 +23,7 @@ class EchoSidebarProvider implements vscode.WebviewViewProvider {
 		webviewView: vscode.WebviewView,
 		_context: vscode.WebviewViewResolveContext,
 		_token: vscode.CancellationToken
-	): void | Thenable<void> {
+	) {
 		webviewView.webview.options = {
 			enableScripts: true
 		};
@@ -143,7 +143,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
 		await handlePrompt(input, context.secrets, "command");
 
-		const response = await getEchoResponse(input, secrets);
+		const response = await getEchoResponse(input, context.secrets);
 
 		// vscode.window.showInformationMessage(response); // Display the response in a message box
 		// Instead, we will log it to the output channel
@@ -196,7 +196,7 @@ export async function getEchoResponse(prompt: string, secrets: vscode.SecretStor
 /* ******************************************************************************* */
 async function handlePrompt(prompt: string, secrets: vscode.SecretStorage, source: 'command' | 'panel') {
 	// Use source to determine where the prompt came from, if needed
-	// echoOutputChannel.appendLine(`🗳️ Source: ${source}`);
+	// echoOutputChannel.appendLine(`🗳️ Source: ${source}`); // Uncomment this line for debugging the source of the prompt
 	const response = await getEchoResponse(prompt, secrets);
 	echoOutputChannel.clear();
 	echoOutputChannel.appendLine(`🔮 Echo says:\n\n${response}`);
