@@ -1,9 +1,27 @@
-# Change Log
+# 📜 Changelog
 
-All notable changes to the "echo-codex" extension will be documented in this file.
+All notable changes to **EchoCodex** will be documented in this file.  
+This project follows [Conventional Commits](https://www.conventionalcommits.org) for clarity and compatibility with future tooling.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+---
 
 ## [Unreleased]
+### 🚧 Coming Soon
+- Floating persona panel (animated daemon assistant)
+- Persona switching UI and customization
+- Context-based commentary engine
 
-- Initial release
+---
+
+## [0.1.1] – 2025-06-19
+### ✨ Added
+- Multiline input support in sidebar
+- Manual “Send” button for prompt submission
+- Refined UI to improve longer prompt workflows
+- Icon added to the activity bar 
+- Sidebar webview linked to the new icon 
+
+### 🧹 Changed
+- Restructured input component for future command support
+
+---
