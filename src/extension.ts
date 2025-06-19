@@ -196,7 +196,7 @@ export async function getEchoResponse(prompt: string, secrets: vscode.SecretStor
 /* ******************************************************************************* */
 async function handlePrompt(prompt: string, secrets: vscode.SecretStorage, source: 'command' | 'panel') {
 	// Use source to determine where the prompt came from, if needed
-	// echoOutputChannel.appendLine(`🗳️ Source: ${source}`);
+	// echoOutputChannel.appendLine(`🗳️ Source: ${source}`); // Uncomment this line for debugging the source of the prompt
 	const response = await getEchoResponse(prompt, secrets);
 	echoOutputChannel.clear();
 	echoOutputChannel.appendLine(`🔮 Echo says:\n\n${response}`);
