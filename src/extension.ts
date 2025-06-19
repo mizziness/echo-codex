@@ -143,7 +143,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
 		await handlePrompt(input, context.secrets, "command");
 
-		const response = await getEchoResponse(input, secrets);
+		const response = await getEchoResponse(input, context.secrets);
 
 		// vscode.window.showInformationMessage(response); // Display the response in a message box
 		// Instead, we will log it to the output channel
