@@ -1,8 +1,14 @@
+export const PERSONAS = {
+  ECHO_DAEMON: 'echoDaemon',
+  GRUNK: 'grunk',
+  WHISPEN: 'whispen',
+} as const;
+
 export interface Persona {
   id: string; // e.g. 'echoDaemon'
   name: string; // Display name
   avatar: string; // Path to avatar image
-  tone: 'heretical' | 'gentle' | 'chaotic' | 'brutal' | string;
+  tone: typeof PERSONAS[keyof typeof PERSONAS] | string;
   promptPrefix: string; // Injected into system prompt
   innerThoughts: string[]; // For rotating ticker text
   uiFlavor: {

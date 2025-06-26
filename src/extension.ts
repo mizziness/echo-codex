@@ -181,8 +181,9 @@ export async function getEchoResponse(prompt: string, secrets: vscode.SecretStor
 	}
 
 	try {
-
-		return await fetchEchoResponse(prompt, apiKey);
+		// Get the currently-set Persona, defaulting to 'heretic'
+		const persona = vscode.workspace.getConfiguration('echoCodex').get<string>('persona') || 'echoDaemon';
+		return await fetchEchoResponse(prompt, apiKey, persona);
 
 	} catch (error) {
 
