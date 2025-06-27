@@ -1,16 +1,24 @@
+import { echoDaemon } from './personas/EchoDaemon';
+import { grunk } from './personas/Grunk';
+import { whispen } from './personas/Whispen';
+
 export const PERSONAS = {
-  ECHO_DAEMON: 'echoDaemon',
-  GRUNK: 'grunk',
-  WHISPEN: 'whispen',
+  ECHODAEMON: echoDaemon,
+  WHISPEN: whispen,
+  GRUNK: grunk,
 } as const;
+
+export type PersonaId = keyof typeof PERSONAS;
+export type PersonaType = typeof PERSONAS[PersonaId];
 
 export interface Persona {
   id: string; // e.g. 'echoDaemon'
   name: string; // Display name
+  description: string; // Short description of the persona
   avatar: string; // Path to avatar image
   tone: typeof PERSONAS[keyof typeof PERSONAS] | string;
   promptPrefix: string; // Injected into system prompt
-  innerThoughts: string[]; // For rotating ticker text
+  innerThoughts: object; // For rotating ticker text
   uiFlavor: {
     apiKeySaved: string;
     apiKeyMissing: string;

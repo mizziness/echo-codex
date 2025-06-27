@@ -9,9 +9,7 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-
-  ],
+  "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
@@ -72,7 +70,9 @@
     "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
     "lint": "eslint src",
     "test": "vscode-test",
-    "jest": "jest --config jest.config.js"
+    "build": "tsc --build",
+    "jest": "jest --config jest.config.ts",
+    "jest:watch": "jest --watch --config jest.config.ts"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
@@ -85,12 +85,18 @@
     "@vscode/test-electron": "^2.5.2",
     "eslint": "^9.25.1",
     "jest": "^30.0.0",
+    "jest-environment-jsdom": "^30.0.2",
     "jest-environment-node": "^30.0.0",
     "ts-jest": "^29.4.0",
     "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "webpack": "^5.99.7",
     "webpack-cli": "^6.0.1"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "dependencies": {
+    "react": "^19.1.0",
+    "zustand": "^5.0.6"
+  }
 }

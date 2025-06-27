@@ -1,15 +1,10 @@
-import { Persona } from './personaTypes';
-
-const personaPromptMap: Record<string, string> = {
-  echoDaemon: 'Respond as a chaos-fueled, reality-bending daemon called Echo or EchoDaemon.',
-  whispen: 'Respond as a gentle, whispering scholar of lost lore named Whispen.',
-  grunk: 'Respond as a crude, loud Ork with enthusiasm and war cries named Grunk.',
-};
+import { PERSONAS } from './personaTypes';
 
 export async function fetchEchoResponse(prompt: string, apiKey: string, persona?: string): Promise<string> 
 {
-    const personaPrompt = persona && personaPromptMap[persona] ? `${personaPromptMap[persona]}\n` : '';
-    const fullPrompt = `${personaPrompt}${prompt}`;
+    const activePersona = PERSONAS[persona?.toUpperCase() as keyof typeof PERSONAS] || PERSONAS.ECHODAEMON;
+    const personaPrompt = activePersona.promptPrefix ? `${activePersona.promptPrefix}\n` : PERSONAS.ECHODAEMON.promptPrefix;
+    const fullPrompt = `${personaPrompt}: ${prompt}`;
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
@@ -27,7 +22,5 @@ export async function fetchEchoResponse(prompt: string, apiKey: string, persona?
         choices?: { message?: { content?: string } }[];
     };
 
-    // For debugging crazy responses, uncomment the next line
-    // echoOutputChannel.appendLine(`🧪 Raw response:\n${JSON.stringify(data, null, 2)}`);
-    return data.choices?.[0]?.message?.content || 'Echo responds with silence.';
+    return data.choices?.[0]?.message?.content || activePersona?.uiFlavor?.noResponse || 'No response available.';
 }

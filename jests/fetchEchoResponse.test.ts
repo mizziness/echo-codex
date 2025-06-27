@@ -28,17 +28,17 @@ describe('fetchEchoResponse', () => {
 
   it('sends the persona in the request body', async () => {
     mockFetchResponse('Here is your joke, heretic.');
-    const result = await fetchEchoResponse('Tell me a joke.', 'fake-key', PERSONAS.ECHO_DAEMON);
+    const result = await fetchEchoResponse(PERSONAS.ECHODAEMON.promptPrefix + ': Tell me a joke.', 'fake-key', PERSONAS.ECHODAEMON.name);
 
     expect(fetch).toHaveBeenCalledWith(expect.any(String), expect.objectContaining({
-      body: expect.stringContaining('Echo'),
+      body: expect.stringContaining("EchoDaemon")
     }));
     expect(result).toBe('Here is your joke, heretic.');
   });
 
   it('returns the expected message', async () => {
     mockFetchResponse('Mocked Echo response');
-    const result = await fetchEchoResponse('Hello?', 'fake-key', PERSONAS.ECHO_DAEMON);
+    const result = await fetchEchoResponse('Hello?', 'fake-key', PERSONAS.ECHODAEMON.name);
     expect(result).toBe('Mocked Echo response');
   });
 
@@ -48,7 +48,7 @@ describe('fetchEchoResponse', () => {
     );
 
     await expect(
-      fetchEchoResponse('Test failed successfully', 'fake-key', PERSONAS.ECHO_DAEMON)
+      fetchEchoResponse('Test failed successfully', 'fake-key', PERSONAS.ECHODAEMON.name)
     ).rejects.toThrow('Fetch failed');
   });
 
@@ -59,7 +59,7 @@ describe('fetchEchoResponse', () => {
       })
     );
 
-    const result = await fetchEchoResponse('Bad API Structure', 'fake-key', PERSONAS.ECHO_DAEMON);
-    expect(result).toBe('Echo responds with silence.');
+    const result = await fetchEchoResponse('Bad API Call', 'fake-key', 'noname');
+    expect(result).toBe('The abyss stares back. It has no answer.');
   });
 });

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { PERSONAS } from './personaTypes';
+import { PERSONAS } from '../../src/personaTypes';
 
 // 👁️ Store definition
 interface PersonaState {
@@ -12,7 +12,7 @@ interface PersonaState {
 export const usePersonaStore = create(
   persist<PersonaState>(
     (set) => ({
-      activePersona: PERSONAS.ECHO_DAEMON,
+      activePersona: PERSONAS.ECHODAEMON, // Default persona
       setPersona: (persona) => set({ activePersona: persona }),
     }),
     {
